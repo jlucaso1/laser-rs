@@ -1,4 +1,4 @@
-use crate::types::CutSetting;
+use super::types::CutSetting;
 
 const DEFAULT_COLORS: [&str; 8] = [
     "#000000", "#FF0000", "#00AA00", "#0000FF", "#FF9900", "#9900FF", "#00AAAA", "#AAAA00",

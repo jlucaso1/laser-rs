@@ -1,7 +1,7 @@
-use crate::bounds::get_transformed_bounds;
-use crate::path::generate_path_data;
-use crate::style::get_cut_setting_style;
-use crate::types::{CutSetting, LightBurnProject, Shape, XForm};
+use super::bounds::get_transformed_bounds;
+use super::path::generate_path_data;
+use super::style::get_cut_setting_style;
+use super::types::{CutSetting, LightBurnProject, Shape, XForm};
 
 /// Format a number with 6 decimal places, treating -0 as 0
 fn f(n: f64) -> String {

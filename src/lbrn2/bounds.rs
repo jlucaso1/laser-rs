@@ -1,4 +1,4 @@
-use crate::types::{PathPrimitive, Shape};
+use super::types::{PathPrimitive, Shape};
 use std::f64::consts::PI;
 
 /// Bounding box

@@ -1,4 +1,4 @@
-use lbrn2_to_svg::{lbrn2_to_svg, parse_lbrn2};
+use laser_tools::lbrn2::{lbrn2_to_svg, parse_lbrn2};
 use std::fs;
 use std::path::Path;
 

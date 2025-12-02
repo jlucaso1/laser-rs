@@ -1,31 +1,35 @@
-//! # lbrn2-to-svg
+//! # laser-tools
 //!
-//! A Rust library for converting LightBurn LBRN2 project files to SVG format.
+//! A Rust library for laser cutting file conversions and image vectorization.
 //!
-//! This library provides functionality to parse LBRN2 XML files (used by LightBurn
-//! laser cutting software) and convert them to standard SVG format.
+//! ## Features
 //!
-//! ## Example
+//! - **LBRN2 to SVG**: Convert LightBurn LBRN2 project files to SVG format
+//! - **Image Vectorization**: Convert raster images to SVG with separate cut/engrave layers
+//!
+//! ## Example - LBRN2 Conversion
 //!
 //! ```rust,ignore
-//! use lbrn2_to_svg::{parse_lbrn2, lbrn2_to_svg};
+//! use laser_tools::lbrn2::{parse_lbrn2, lbrn2_to_svg};
 //!
 //! let lbrn2_content = std::fs::read_to_string("example.lbrn2").unwrap();
 //! let project = parse_lbrn2(&lbrn2_content).unwrap();
 //! let svg = lbrn2_to_svg(&project);
 //! std::fs::write("output.svg", svg).unwrap();
 //! ```
+//!
+//! ## Example - Image Vectorization
+//!
+//! ```rust,ignore
+//! use laser_tools::vectorize::{vectorize_image_file, VectorizeOptions};
+//!
+//! let result = vectorize_image_file("input.png", None).unwrap();
+//! std::fs::write("output.svg", result.svg).unwrap();
+//! ```
 
-pub mod bounds;
-pub mod parser;
-pub mod path;
-pub mod style;
-pub mod svg;
-pub mod types;
+pub mod lbrn2;
+pub mod vectorize;
 
-// Re-export main public API
-pub use parser::{
-    parse_lbrn2_complete as parse_lbrn2, parse_prim_list, parse_vert_list, parse_xform,
-};
-pub use svg::lbrn2_to_svg;
-pub use types::*;
+// Re-export commonly used items
+pub use lbrn2::{LightBurnProject, lbrn2_to_svg, parse_lbrn2};
+pub use vectorize::{VectorizeOptions, VectorizeResult, vectorize_image, vectorize_image_file};

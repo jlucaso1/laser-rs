@@ -1,4 +1,4 @@
-use crate::types::{Path, PathPrimitive, Vec2};
+use super::types::{Path, PathPrimitive, Vec2};
 
 /// Format a number with 6 decimal places
 fn f(n: f64) -> String {
