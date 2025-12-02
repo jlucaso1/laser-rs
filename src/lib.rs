@@ -27,6 +27,7 @@
 //! std::fs::write("output.svg", result.svg).unwrap();
 //! ```
 
+pub mod editor;
 pub mod lbrn2;
 pub mod vectorize;
 
