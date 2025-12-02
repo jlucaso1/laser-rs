@@ -1,0 +1,19 @@
+[package]
+name = "lbrn2-to-svg"
+version = "0.1.0"
+edition = "2024"
+description = "Convert LightBurn LBRN2 project files to SVG"
+license = "MIT"
+
+[lib]
+name = "lbrn2_to_svg"
+path = "src/lib.rs"
+
+[[bin]]
+name = "lbrn2-to-svg"
+path = "src/main.rs"
+
+[dependencies]
+quick-xml = "0.38.4"
+
+[dev-dependencies]
